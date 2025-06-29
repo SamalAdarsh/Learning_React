@@ -1,40 +1,32 @@
-// const heading = React.createElement(
-//   "h1",
-//   { id: "heading", xyz: "abc" },
-//   "Hello world from React"
-// );
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-// const root = ReactDOM.createRoot(document.getElementById("root"));
+const elm  = <p>Just an element</p>
 
-// console.log(heading);
+const JSXheading =( <h1 className="Head">
+    {elm}
+    Hello Adarsh JSX</h1>);
 
-// root.render(heading);
+//Functional Component
 
-{
-  /* <div id="parent">
-        <div id="class">
-            <h1>I'm h1 tag</h1>
-            <h2>I'm h2 tag</h2>
-        </div> */
-}
+const FCheading = () => {
+    return <h1 className="Head"> Hello Adarsh from FC-1</h1>
+};
 
-const parent = React.createElement(
-    "div", 
-    { id: "parent" },
-    [React.createElement("div", { id: "child" },[
-        React.createElement("h1", { },  "Hello from h1"),
-        React.createElement("h2", { },  "Hello from h2"),]
-    
-    ),
+const FCheading2 = () => (
 
-    React.createElement("div", { id: "child" },[
-        React.createElement("h1", { },  "Hello from h1"),
-        React.createElement("h2", { },  "Hello from h2"),]
-    
-    )]);
+<div className="container">
+{/* <FCheading/> */}
 
-const root1 = ReactDOM.createRoot(document.getElementById("root"));
+{/* <FCheading></FCheading> */}
 
-console.log(parent);
+{FCheading()}
 
-root1.render(parent);
+{JSXheading}
+<h1 className="Head"> Hello Adarsh from FC-2</h1>
+</div>
+);
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(<FCheading2></FCheading2>);
