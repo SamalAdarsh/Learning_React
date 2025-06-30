@@ -1,4 +1,31 @@
-#heading{
+.logo{
 
-    color: rebeccapurple;
+    width: 150px;
+}
+
+.head-container{
+
+    display: flex;
+
+    justify-content: space-between;
+
+    border: 2px solid black;
+
+}
+
+
+.nav-items > ul {
+
+    display: flex;
+
+    /* padding-right: 100px; */
+
+}
+
+.nav-items > ul > li {
+
+list-style: none;
+
+padding: 40px 30px;
+font-size: 25px;
 }

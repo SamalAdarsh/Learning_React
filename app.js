@@ -1,32 +1,42 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import logo from "./logo1.jpg";
+import userIcon from "./user-icon2.jpg";
 
-const elm  = <p>Just an element</p>
+const Header = () => {
 
-const JSXheading =( <h1 className="Head">
-    {elm}
-    Hello Adarsh JSX</h1>);
+     return (
+           <div className="head-container">
 
-//Functional Component
+            <div className="logo-container">
+                <img  className="logo" src="https://images.seeklogo.com/logo-png/55/1/food-paradise-logo-png_seeklogo-551076.png" alt="Logo"></img>
+                 </div>
+            <div className="nav-items"> 
+              <ul>
+                   <li>Home</li>
+                    <li>Contact Us</li>
+                    <li>About Us</li>
+                     <li>Cart</li>
+              </ul>
+            
+            </div>
+           </div>
+    );
 
-const FCheading = () => {
-    return <h1 className="Head"> Hello Adarsh from FC-1</h1>
+
+}
+
+const AppLayout = () =>{
+
+    return (
+           <div className="main-container">
+           <Header/>
+           </div>
+    );
+
 };
 
-const FCheading2 = () => (
-
-<div className="container">
-{/* <FCheading/> */}
-
-{/* <FCheading></FCheading> */}
-
-{FCheading()}
-
-{JSXheading}
-<h1 className="Head"> Hello Adarsh from FC-2</h1>
-</div>
-);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<FCheading2></FCheading2>);
+root.render(<AppLayout/>);
