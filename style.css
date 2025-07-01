@@ -29,3 +29,31 @@ list-style: none;
 padding: 40px 30px;
 font-size: 25px;
 }
+
+
+.res-card{
+
+    width: 200px;
+    height: 300px;
+    border: 2px solid black;
+    padding: 10px;
+    font-size: 15px;
+    margin: 5px;
+
+}
+
+.search{
+
+    padding: 10px;
+}
+
+.res-img{
+
+    width: 100%;
+}
+
+.res-conatiner{
+
+    display: flex;
+    flex-wrap: wrap;
+}

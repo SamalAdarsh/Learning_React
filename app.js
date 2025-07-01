@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import logo from "./logo1.jpg";
-import userIcon from "./user-icon2.jpg";
+
 
 const Header = () => {
 
@@ -26,11 +25,62 @@ const Header = () => {
 
 }
 
+//Inline CSS
+
+const styleCard = {
+
+    backgroundColor : "grey"
+}
+
+const RestaurentCard = () =>(
+<div className="res-card" style={styleCard}>
+ <img 
+ className="res-img"
+ src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/jvtx9kfdlmovtdyy3rhv"></img>
+ <h3>Abhinandan Hotel</h3>
+ <h4>Chinese, Tandoori, Asian</h4>
+ <h4>4.5 stars</h4>
+ <h4>45 mins</h4>
+</div>
+
+);
+
+
+
+
+const Body = () =>(
+
+<div className="body">
+<div className="search">Search</div>
+<div className="res-conatiner">
+
+<RestaurentCard/>
+<RestaurentCard/>
+<RestaurentCard/>
+<RestaurentCard/>
+<RestaurentCard/>
+<RestaurentCard/>
+<RestaurentCard/>
+<RestaurentCard/>
+<RestaurentCard/>
+<RestaurentCard/>
+<RestaurentCard/>
+<RestaurentCard/>
+
+</div>
+
+
+
+ </div>
+
+);
+
 const AppLayout = () =>{
 
     return (
            <div className="main-container">
            <Header/>
+           <Body/>
            </div>
     );
 
