@@ -318,9 +318,9 @@ const resList = [
       areaName: "Wanowrie",
       costForTwo: "₹350 for two",
       cuisines: ["Burgers", "American"],
-      avgRating: 4.3,
+      avgRating: 3.4,
       parentId: "166",
-      avgRatingString: "4.3",
+      avgRatingString: "3.4",
       totalRatingsString: "15K+",
       sla: {
         deliveryTime: 31,
@@ -469,9 +469,9 @@ const resList = [
       areaName: "Camp",
       costForTwo: "₹400 for two",
       cuisines: ["Burgers", "Beverages", "Cafe", "Desserts"],
-      avgRating: 4.5,
+      avgRating: 3.5,
       parentId: "630",
-      avgRatingString: "4.5",
+      avgRatingString: "3.5",
       totalRatingsString: "17K+",
       sla: {
         deliveryTime: 17,
