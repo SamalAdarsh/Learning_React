@@ -64,3 +64,13 @@ width: 200px;
 height: 400px;
 background-color: #f0f0f0;
 }
+
+.login-btn{
+
+    padding: 5px;
+    margin: 20px;
+    height: 80px;
+    width: 80px;
+    cursor: pointer;
+    
+}

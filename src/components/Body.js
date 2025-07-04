@@ -33,10 +33,7 @@ const Body = () => {
     );
   };
 
-// if(listofRestaurents.length === 0){
 
-//     return(<Shimmer/>);
-//   }
 
   return listofRestaurents.length === 0 ? <Shimmer/> :(
     <div className="body">
