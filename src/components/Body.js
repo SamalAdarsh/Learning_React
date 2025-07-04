@@ -1,14 +1,34 @@
 import RestaurentCard from "./RestaurentCard";
-import resList from "../utils/MockData";
+import resList from "../utils/dummyData";
 import { useState } from "react";
 
-const Body = () => {
-  //State Variable
 
-  const [listofRestaurents, setlistofRestaurents] = useState(resList);
+function filterData(searchText, restaurants) {
+  const filterData = restaurants.filter((restaurant) =>
+    restaurant?.info?.name.toLowerCase().includes(searchText.toLowerCase())
+  );
+  return filterData;
+}
+
+
+
+
+const Body = () => {
+
+
+const [searchText, setSearchText] = useState("");
+// const [restaurants, setRestaurants] = useState(resList);
+
+
+
+
+
+const [listofRestaurents, setlistofRestaurents] = useState(resList);
 
   return (
     <div className="body">
+      
+    
       <button
         className="filter-btn"
         onClick={() => {
@@ -22,10 +42,40 @@ const Body = () => {
       >
         Top Rated Restaurants
       </button>
+      
+      <span className="search-container">
+        <input
+          type="text"
+          className="search-input"
+          placeholder="Search a restaurant you want..."
+          value={searchText}
+          onChange={(e) => setSearchText(e.target.value)}
+        ></input>
+        <button
+          className="search-btn"
+          onClick={() => {
+            // filter the data
+            const data = filterData(searchText, listofRestaurents);
+            // update the state of restaurants list
+            setlistofRestaurents(data);
+            // console.log(data);
+          }}
+        >
+          Search
+        </button>
+      </span>
+    
+
       <div className="res-conatiner">
-        {listofRestaurents.map((restaurant) => (
+         
+         {listofRestaurents.map((restaurant) => (
           <RestaurentCard key={restaurant.info.id} resData={restaurant} />
         ))}
+        
+    
+        
+       
+     
       </div>
     </div>
   );
