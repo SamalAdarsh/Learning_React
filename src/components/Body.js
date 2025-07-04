@@ -1,6 +1,7 @@
 import RestaurentCard from "./RestaurentCard";
 import resList from "../utils/dummyData";
 import { useState, useEffect } from "react";
+import Shimmer from "./Shimmer";
 
 function filterData(searchText, restaurants) {
   const filterData = restaurants.filter((restaurant) =>
@@ -27,16 +28,23 @@ const Body = () => {
 
     console.log(json);
 
-    setlistofRestaurents(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
+    setlistofRestaurents(
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
   };
 
-  return (
+// if(listofRestaurents.length === 0){
+
+//     return(<Shimmer/>);
+//   }
+
+  return listofRestaurents.length === 0 ? <Shimmer/> :(
     <div className="body">
       <button
         className="filter-btn"
         onClick={() => {
           const filteredList = listofRestaurents.filter(
-            (res) => res.info.avgRating > 4
+            (res) => res.info.avgRating > 4.2
           );
 
           setlistofRestaurents(filteredList);
