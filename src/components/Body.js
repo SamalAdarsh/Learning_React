@@ -1,7 +1,6 @@
 import RestaurentCard from "./RestaurentCard";
 import resList from "../utils/dummyData";
-import { useState } from "react";
-
+import { useState, useEffect } from "react";
 
 function filterData(searchText, restaurants) {
   const filterData = restaurants.filter((restaurant) =>
@@ -10,25 +9,29 @@ function filterData(searchText, restaurants) {
   return filterData;
 }
 
-
-
-
 const Body = () => {
+  const [searchText, setSearchText] = useState("");
 
+  const [listofRestaurents, setlistofRestaurents] = useState([]);
 
-const [searchText, setSearchText] = useState("");
-// const [restaurants, setRestaurants] = useState(resList);
+  useEffect(() => {
+    fetchData();
+  }, []);
 
+  const fetchData = async () => {
+    const data = await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.5246091&lng=73.8786239&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+    );
 
+    const json = await data.json();
 
+    console.log(json);
 
-
-const [listofRestaurents, setlistofRestaurents] = useState(resList);
+    setlistofRestaurents(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
+  };
 
   return (
     <div className="body">
-      
-    
       <button
         className="filter-btn"
         onClick={() => {
@@ -42,7 +45,7 @@ const [listofRestaurents, setlistofRestaurents] = useState(resList);
       >
         Top Rated Restaurants
       </button>
-      
+
       <span className="search-container">
         <input
           type="text"
@@ -54,28 +57,19 @@ const [listofRestaurents, setlistofRestaurents] = useState(resList);
         <button
           className="search-btn"
           onClick={() => {
-            // filter the data
             const data = filterData(searchText, listofRestaurents);
-            // update the state of restaurants list
+
             setlistofRestaurents(data);
-            // console.log(data);
           }}
         >
           Search
         </button>
       </span>
-    
 
       <div className="res-conatiner">
-         
-         {listofRestaurents.map((restaurant) => (
+        {listofRestaurents.map((restaurant) => (
           <RestaurentCard key={restaurant.info.id} resData={restaurant} />
         ))}
-        
-    
-        
-       
-     
       </div>
     </div>
   );
