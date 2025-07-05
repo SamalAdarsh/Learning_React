@@ -53,24 +53,38 @@
   display: flex;
 }
 
-.shimmer-container{
-display: flex;
-flex-wrap: wrap;
+.shimmer-container {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.shimmer-card{
-margin: 10px;
-width: 200px;
-height: 400px;
-background-color: #f0f0f0;
+.shimmer-card {
+  margin: 10px;
+  width: 200px;
+  height: 400px;
+  background-color: #f0f0f0;
 }
 
-.login-btn{
+.login-btn {
+  padding: 5px;
+  margin: 20px;
+  height: 80px;
+  width: 80px;
+  cursor: pointer;
+}
 
-    padding: 5px;
-    margin: 20px;
-    height: 80px;
-    width: 80px;
-    cursor: pointer;
-    
+.filter {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.search {
+  margin: 20px;
+  padding: 10px;
+  
+}
+
+.search-btn{
+
+  cursor: pointer;
 }
