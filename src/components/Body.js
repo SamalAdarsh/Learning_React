@@ -1,5 +1,5 @@
 import RestaurentCard from "./RestaurentCard";
-import resList from "../utils/dummyData";
+// import resList from "../utils/dummyData";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router";
@@ -59,6 +59,7 @@ const Body = () => {
                 res.info.name.toLowerCase().includes(searchText.toLowerCase())
               );
 
+            
               setfilteredRestaurents(filteredRestaurent);
               console.log(filteredRestaurent);
             }}
@@ -71,10 +72,11 @@ const Body = () => {
           className="filter-btn"
           onClick={() => {
             const filteredList = listofRestaurents.filter(
-              (res) => res.info.avgRating > 4.2
+              (res) => res.info.avgRating > 4.5
             );
 
-            setlistofRestaurents(filteredList);
+            // setlistofRestaurents(filteredList);
+            setfilteredRestaurents(filteredList);
             console.log(filteredList);
           }}
         >

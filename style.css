@@ -41,25 +41,22 @@
 
 .res-img {
   width: 100%;
-  object-fit:cover;
+  object-fit: cover;
   height: 200px;
 }
 
 .res-conatiner {
   display: flex;
   flex-wrap: wrap;
-
+  gap: 30px;
   justify-content: flex-start;
-justify-content: space-between;
-
+  /* justify-content: space-between; */
 
   max-width: 80%;
   /* max-height: 80%; */
-  margin: 0 auto;                   
+  margin: 0 auto;
   /* padding: 100px; */
   /* max-height: fit-content; */
-  
-
 }
 
 .top-search-conatiner {
@@ -69,7 +66,7 @@ justify-content: space-between;
 .shimmer-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content:center ;
+  justify-content: center;
 }
 
 .shimmer-card {
@@ -95,16 +92,13 @@ justify-content: space-between;
 .search {
   margin: 20px;
   padding: 10px;
-  
 }
 
-.search-btn{
-
+.search-btn {
   cursor: pointer;
 }
 
-.link-items{
-
+.link-items {
   text-decoration: none;
   color: inherit;
 }
